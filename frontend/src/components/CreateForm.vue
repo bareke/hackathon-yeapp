@@ -61,7 +61,12 @@
 </template>
 
 <script>
+import StepProgress from "vue-step-progress";
+import "vue-step-progress/dist/main.css";
 export default {
+  components: {
+    "step-progress": StepProgress,
+  },
   data() {
     return {
       form: {
