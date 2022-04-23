@@ -1,0 +1,11 @@
+query HelloWorld {
+  allExamples {
+    edges {
+      node {
+        id
+        name
+        lastname
+      }
+    }
+  }
+}
