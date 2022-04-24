@@ -1,0 +1,10 @@
+query allClinicHystory {
+  allClinicsHistories {
+    edges {
+      node {
+        id
+        data
+      }
+    }
+  }
+}

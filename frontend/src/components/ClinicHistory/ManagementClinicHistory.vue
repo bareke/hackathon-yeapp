@@ -97,12 +97,14 @@ export default {
           },
         })
         .then(() => {
-          this.launchNotification(
-            "success",
-            "Historia registrada",
-            "...",
-            '<box-icon color="rgb(20,255,20)" type="solid" name="newUser-check"></box-icon>'
-          );
+          this.currentStep = 0;
+          (this.form.data = {}),
+            this.launchNotification(
+              "success",
+              "Historia registrada",
+              "...",
+              '<box-icon color="rgb(20,255,20)" type="solid" name="newUser-check"></box-icon>'
+            );
         })
         .catch(() => {
           this.error = true;
