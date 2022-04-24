@@ -43,6 +43,9 @@
     <div v-if="found.length > 0">
       <ViewClinicHistory :clinicHistory="found[0]" />
     </div>
+    <div v-else-if="searchValue !== ''">
+      <h1 class="mt-10 text-xl text-gray-400">No se encontraron datos</h1>
+    </div>
   </div>
 </template>
 <script>
