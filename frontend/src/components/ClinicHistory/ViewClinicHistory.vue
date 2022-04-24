@@ -56,7 +56,7 @@
         </div>
       </vs-dialog>
     </div>
-    <AccoredeonComponent
+    <AccordeonComponent
       class="mt-16"
       ref="user"
       title="Información del paciente"
@@ -77,8 +77,8 @@
         <span for="name"> <b>Dirección del paciente:</b></span>
         <span>{{ clinicHistory.node.data.userData.address }}</span>
       </div>
-    </AccoredeonComponent>
-    <AccoredeonComponent
+    </AccordeonComponent>
+    <AccordeonComponent
       class="mt-16"
       id="consult"
       title="Información de la consulta"
@@ -95,23 +95,23 @@
         <span for="name"> <b>Antecedentes:</b></span>
         <span>{{ clinicHistory.node.data.consultData.past }}</span>
       </div>
-    </AccoredeonComponent>
-    <AccoredeonComponent class="mt-16" id="annexes" title="Anexos">
-      <h1>No hay anexos</h1></AccoredeonComponent
+    </AccordeonComponent>
+    <AccordeonComponent class="mt-16" id="annexes" title="Anexos">
+      <h1>No hay anexos</h1></AccordeonComponent
     >
   </div>
 </template>
 
 <script>
-import AccoredeonComponent from "@/components/AccordeonComponent.vue";
+import AccordeonComponent from "@/components/AccordeonComponent.vue";
 
 export default {
-  components: { AccoredeonComponent },
+  components: { AccordeonComponent },
   props: ["clinicHistory"],
   data() {
     return {
       active: false,
-      recommendations: {},
+      recommendations: "",
     };
   },
   created() {
