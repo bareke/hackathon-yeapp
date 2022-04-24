@@ -17,6 +17,20 @@ Integrantes del proyecto
 
 ---
 
+## Arquitectura
+
+![architecture](diagrams/architecture.png "arquitectura")
+
+
+---
+
+## Base de Datos
+
+![database](diagrams/database.png "base de datos")
+
+
+---
+
 ## Extensiones para Visual Studio Code
 
 ### Front
