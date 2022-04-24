@@ -8,7 +8,7 @@ from django.db.models import DateTimeField
 class ClinicHistory(Model):
     """Clase que representa una historia clínica"""
 
-    data = JSONField(default=dict, help_text='historia clínica')
+    data = JSONField(null=False, help_text='historia clínica')
     created_at = DateTimeField(
         auto_now_add=True,
         help_text='fecha de creación'
