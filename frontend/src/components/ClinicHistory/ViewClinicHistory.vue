@@ -1,7 +1,7 @@
 <template>
   <div class="flex gap-6">
     <vs-button danger flat class="absolute right-4 my-4" @click="generateReport"
-      >Generear reporte</vs-button
+      >Generar reporte</vs-button
     >
     <AccoredeonComponent
       class="mt-16"
