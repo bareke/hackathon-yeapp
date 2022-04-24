@@ -5,12 +5,16 @@
         Volver
       </vs-button>
     </div>
-    <div class="text-center mt-48 bg-blue-100 rounded-xl mx-20 py-10">
-      <h1 class="text-3xl font-bold text-gray-600 capitalize mb-6">
+    <div class="text-center mt-32 bg-blue-100 rounded-xl mx-20 py-10">
+      <h1 class="text-3xl font-bold text-gray-600 capitalize mb-7">
         Buscar historia clínica
       </h1>
       <div class="flex justify-center text-center gap-5 my-auto">
-        <vs-select placeholder="Selecione tipo de documento" v-model="searchId">
+        <vs-select
+          placeholder="Selecione tipo de documento"
+          primary
+          v-model="searchId"
+        >
           <vs-option label="Cedula" value="1"> Cedula </vs-option>
           <vs-option label="Tarjeta de identidad" value="2">
             Tarjeta de identidad
@@ -26,6 +30,7 @@
         <vs-input
           label-placeholder="Buscar historia clinica..."
           type="number"
+          primary
           v-model="searchValue"
         >
         </vs-input>
