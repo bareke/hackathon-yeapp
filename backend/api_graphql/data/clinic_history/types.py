@@ -1,5 +1,6 @@
 from graphene.relay import Node
 from graphene_django import DjangoObjectType
+from graphene.types.generic import GenericScalar
 from api_graphql.connections import TotalCountConnection
 
 from clinic_history.models import ClinicHistory
@@ -13,6 +14,8 @@ class ClinicHistoryNode(DjangoObjectType):
     para definir la relación entre los campos del esquema
     y cómo se recuperan los datos.
     """
+
+    data = GenericScalar()
 
     class Meta:
         model = ClinicHistory
