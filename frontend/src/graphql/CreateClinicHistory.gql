@@ -1,0 +1,7 @@
+mutation createClinicHistory($data: CreateClinicHistoryInput!) {
+  createClinicHistory(input: $data) {
+    clinicHistory {
+      data
+    }
+  }
+}

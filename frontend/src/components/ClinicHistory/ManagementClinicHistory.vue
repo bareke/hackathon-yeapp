@@ -13,9 +13,21 @@
     <h1 v-if="currentStep === 0" class="text-4xl mb-4">
       Registrar nueva historia clinica
     </h1>
-    <FormUserInfo v-if="currentStep === 1" />
-    <ConsultReason v-if="currentStep === 2" />
-    <UserAnnexes v-if="currentStep === 3" />
+    <keep-alive>
+      <FormUserInfo
+        v-if="currentStep === 1"
+        @user-data="loadUserData($event)"
+      />
+    </keep-alive>
+    <keep-alive>
+      <ConsultReason
+        v-if="currentStep === 2"
+        @consult-data="loadConsultData($event)"
+      />
+    </keep-alive>
+    <keep-alive>
+      <UserAnnexes v-if="currentStep === 3" />
+    </keep-alive>
 
     <div class="flex gap-5">
       <vs-button type="filled" @click="back" v-if="currentStep > 0">
@@ -60,6 +72,13 @@ export default {
       ],
       currentStep: 0,
       notification: null,
+
+      form: {
+        data: {
+          userData: {},
+          consultData: {},
+        },
+      },
     };
   },
   methods: {
@@ -70,15 +89,47 @@ export default {
       this.currentStep--;
     },
     register() {
-      this.openNotification("success", "Exitoso");
+      this.$apollo
+        .mutate({
+          mutation: require("@/graphql/CreateClinicHistory.gql"),
+          variables: {
+            data: this.form,
+          },
+        })
+        .then(() => {
+          this.launchNotification(
+            "success",
+            "Historia registrada",
+            "...",
+            '<box-icon color="rgb(20,255,20)" type="solid" name="newUser-check"></box-icon>'
+          );
+        })
+        .catch(() => {
+          this.error = true;
+          this.launchNotification(
+            "danger",
+            "Registro fallído",
+            "Revisa los datos ingresados.",
+            '<box-icon name="newUser-check" color="#e81519" ></box-icon>'
+          );
+        });
     },
-    openNotification(color, text) {
-      this.notification = this.$vs.notification({
+
+    loadUserData(ev) {
+      this.form.data.userData = ev;
+    },
+    loadConsultData(ev) {
+      this.form.data.consultData = ev;
+    },
+    launchNotification(color = "success", title = "", body = "", icon = "") {
+      this.$vs.notification({
+        position: "top-right",
         color,
         flat: true,
-        position: "top-right",
-        title: "Registro de historia clinica",
-        text,
+        icon,
+        progress: "auto",
+        title,
+        text: body,
       });
     },
   },

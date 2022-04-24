@@ -1,7 +1,7 @@
 <template>
   <div class="rounded shadow-xl bg-blue-100 p-8 w-3/5">
     <h1 class="text-sm sm:text-xl font-bold">Registrar datos del usuario</h1>
-    <div class="mt-4 grid grid-cols-2 gap-10 inputs">
+    <div class="mt-4 grid grid-cols-2 gap-10 inputs" @change="emitFormData">
       <vs-input
         class="w-full"
         primary
@@ -73,6 +73,11 @@ export default {
         genre: "",
       },
     };
+  },
+  methods: {
+    emitFormData() {
+      this.$emit("user-data", this.form);
+    },
   },
 };
 </script>

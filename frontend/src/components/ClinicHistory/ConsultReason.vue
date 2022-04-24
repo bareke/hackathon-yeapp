@@ -4,7 +4,7 @@
       Registrar datos de la consulta
     </h1>
 
-    <div class="flex flex-col">
+    <div class="flex flex-col" @change="emitConsultReason">
       <label for="decription" class="text-left text-xs mb-0 text-gray-500"
         >Descripción de la consulta</label
       >
@@ -54,6 +54,11 @@ export default {
         past: "",
       },
     };
+  },
+  methods: {
+    emitConsultReason() {
+      this.$emit("consult-data", this.form);
+    },
   },
 };
 </script>
