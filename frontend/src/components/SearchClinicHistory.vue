@@ -1,5 +1,10 @@
 <template>
   <div>
+    <div class="text-center mt-5 mx-20">
+      <vs-button size="xl" danger type="filled" @click="goToHome">
+        Volver
+      </vs-button>
+    </div>
     <div class="text-center mt-48 bg-blue-100 rounded-xl mx-20 py-10">
       <h1 class="text-3xl font-bold text-gray-600 capitalize mb-6">
         Buscar historia clínica
@@ -70,6 +75,9 @@ export default {
         .then((response) => {
           this.data = response.data.allClinicsHistories.edges;
         });
+    },
+    goToHome() {
+      this.$router.push("/");
     },
   },
 };

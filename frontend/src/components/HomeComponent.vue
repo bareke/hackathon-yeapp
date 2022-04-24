@@ -54,6 +54,9 @@ export default {
     searchClinicHistory() {
       this.$router.push("/search");
     },
+    goToHome() {
+      this.$router.push("/");
+    },
   },
 };
 </script>
