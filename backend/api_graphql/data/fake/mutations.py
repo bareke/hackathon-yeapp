@@ -1,3 +1,4 @@
+import logging
 from faker import Faker
 from graphene import Int
 from graphene import Boolean
@@ -34,8 +35,10 @@ class FakeData(Mutation):
                     "antecedentes": faker.sentence()
                 }
                 ClinicHistory.objects.create(data=data)
+                logging.info("generating fake data successfully")
                 response = True
         except:
+            logging.warning("error generating fake data")
             response = False
 
         return FakeData(response=response)

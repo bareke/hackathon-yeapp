@@ -1,3 +1,4 @@
+import logging
 from graphene import Field
 from graphene import Mutation
 
@@ -22,6 +23,7 @@ class CreateClinicHistory(Mutation):
     def mutate(self, info, input: CreateClinicHistoryInput):
         input = delete_attributes_none(**vars(input))
         clinic_history = ClinicHistory.objects.create(**input)
+        logging.info("create clinic history", info)
 
         return CreateClinicHistory(clinic_history=clinic_history)
 
@@ -43,5 +45,6 @@ class UpdateClinicHistory(Mutation):
 
         ClinicHistory.objects.filter(pk=input.get('id')).update(**input)
         clinic_history = ClinicHistory.objects.get(pk=input.get('id'))
+        logging.info("update clinic history", info)
 
         return UpdateClinicHistory(clinic_history=clinic_history)
