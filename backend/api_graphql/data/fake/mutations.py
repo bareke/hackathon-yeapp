@@ -23,16 +23,19 @@ class FakeData(Mutation):
             for i in range(number):
                 name, lastname = faker.name().split()
                 data = {
-                    "nombres": name,
-                    "apellidos": lastname,
-                    "tipo_documento": "cedula",
-                    "numero_documento": faker.ean13(),
-                    "genero": "m",
-                    "telefono": faker.phone_number(),
-                    "direccion": faker.address(),
-                    "descripcion": faker.sentence(),
-                    "enfermedades": faker.sentence(),
-                    "antecedentes": faker.sentence()
+                    "userData": {
+                        "name": name,
+                        "lastname": lastname,
+                        "identificationType": "1",
+                        "identificationNumber": faker.ean13(),
+                        "address": faker.address(),
+                        "genre": "m"
+                    },
+                    "consultData": {
+                        "description": "colesterol alto",
+                        "actualSicks": faker.sentence(),
+                        "antepastcedentes": faker.sentence()
+                    }
                 }
                 ClinicHistory.objects.create(data=data)
                 logging.info("generating fake data successfully")
