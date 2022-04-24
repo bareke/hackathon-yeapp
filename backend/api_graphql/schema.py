@@ -8,6 +8,8 @@ from graphene import ObjectType
 from graphene.relay import Node
 from graphene_django.filter import DjangoFilterConnectionField
 
+from api_graphql.data.fake.mutations import FakeData
+
 # Schema definition
 
 
@@ -23,3 +25,4 @@ class Mutation(ObjectType):
 
     create_clinic_history = CreateClinicHistory.Field(description='Crear historia clínica')
     update_clinic_history = UpdateClinicHistory.Field(description='Actualizar historia clínica')
+    create_fake_data = FakeData.Field(description='Generar datos falsos')

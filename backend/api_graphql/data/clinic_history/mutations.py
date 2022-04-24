@@ -12,7 +12,7 @@ from api_graphql.utils import transform_global_ids
 
 
 class CreateClinicHistory(Mutation):
-    """Clase para crear historias clinicas"""
+    """Clase para crear historias clínicas"""
 
     clinic_history = Field(ClinicHistoryNode)
 
@@ -27,7 +27,7 @@ class CreateClinicHistory(Mutation):
 
 
 class UpdateClinicHistory(Mutation):
-    """Clase para actualizar historias clinicas"""
+    """Clase para actualizar historias clínicas"""
 
     clinic_history = Field(ClinicHistoryNode)
 
