@@ -1,7 +1,8 @@
 <template>
-  <div class="home flex justify-center items-center">
+  <div class="flex justify-center items-center">
     <!-- <HelloWorld /> -->
     <HomeComponent />
+    <router-view></router-view>
   </div>
 </template>
 

@@ -1,6 +1,8 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import HomeView from "../views/HomeView.vue";
+import ManagementClinicHistory from "../views/ManagementClinicHistory";
+import SearchClinicHistory from "../views/SearchClinicHistory";
 
 Vue.use(VueRouter);
 
@@ -9,6 +11,16 @@ const routes = [
     path: "/",
     name: "home",
     component: HomeView,
+  },
+  {
+    path: "/management",
+    name: "management",
+    component: ManagementClinicHistory,
+  },
+  {
+    path: "/search",
+    name: "search",
+    component: SearchClinicHistory,
   },
   {
     path: "/about",

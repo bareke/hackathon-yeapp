@@ -1,7 +1,7 @@
 <template>
   <div class="rounded shadow-xl bg-blue-100 p-8 w-3/5">
     <h1 class="text-sm sm:text-xl font-bold">Registrar datos del usuario</h1>
-    <div class="mt-4 grid grid-cols-2 gap-10">
+    <div class="mt-4 grid grid-cols-2 gap-10 inputs">
       <vs-input
         class="w-full"
         primary
@@ -79,17 +79,17 @@ export default {
 
 <style scoped></style>
 <style>
-.vs-input-content {
+.inputs .vs-input-content {
   width: 100%;
 }
-.vs-input {
+.inputs .vs-input {
   width: 100% !important;
 }
-.vs-select {
+.inputs .vs-select {
   width: 100% !important;
   max-width: 100% !important;
 }
-.vs-select-content {
+.inputs .vs-select-content {
   width: 100% !important;
   max-width: 100% !important;
 }

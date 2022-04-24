@@ -1,5 +1,5 @@
 <template>
-  <div class="flex gap-20 mt-60">
+  <div class="flex justify-center items-center gap-20 mt-60">
     <div class="h-80 w-80">
       <vs-card type="3" @click="createClinicHistory()">
         <template #title>
@@ -49,10 +49,10 @@ export default {
   },
   methods: {
     createClinicHistory() {
-      //this.$router.push("/");
+      this.$router.push("/management");
     },
     searchClinicHistory() {
-      //this.$router.push("/");
+      this.$router.push("/search");
     },
   },
 };
